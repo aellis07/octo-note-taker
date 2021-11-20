@@ -17,4 +17,9 @@ router.get("/notes", function (req, res) {
 //Saved notes on notes page
 router.get("/api/notes", (req, res) => res.json(noteData));
 
+// POST
+router.post("/api/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/notes.html"));
+});
+
 module.exports = router;
