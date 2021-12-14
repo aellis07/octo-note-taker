@@ -29,7 +29,7 @@ router.post("/api/notes", (req, res) => {
     // creating a notes object using JSON.parse
     notes = JSON.parse(notes);
     // assigning the note a default id value
-    let noteID = 0;
+    let noteID = 1;
     // creating a noteID that increments by 1
     notes.id = noteID;
     noteID++;
@@ -64,6 +64,24 @@ router.put("api/notes/:id", (req, res) => {
     // if the noteID matches, update the note
     fs.writeFile(
       __dirname + "db/db.json",
+      JSON.stringify(notes),
+      (err, data) => {
+        if (err) throw err;
+        res.json(notes);
+      }
+    );
+  });
+});
+
+router.delete("/api/notes/:id", (req, res) => {
+  const noteID = JSON.parse(req.params.id);
+  console.log(noteID);
+  fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, notes) => {
+    if (err) throw err;
+    notes = JSON.parse(notes);
+    notes = notes.filter((val) => val.id !== noteID);
+    fs.writeFile(
+      path.join(__dirname, "../db/db.json"),
       JSON.stringify(notes),
       (err, data) => {
         if (err) throw err;
