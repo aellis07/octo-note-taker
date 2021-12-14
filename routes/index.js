@@ -29,7 +29,7 @@ router.post("/api/notes", (req, res) => {
     // creating a notes object using JSON.parse
     notes = JSON.parse(notes);
     // assigning the note a default id value
-    let noteID = 1;
+    let noteID = 0;
     // creating a noteID that increments by 1
     notes.id = noteID;
     noteID++;
@@ -73,6 +73,7 @@ router.put("api/notes/:id", (req, res) => {
   });
 });
 
+// copy and paste of put route
 router.delete("/api/notes/:id", (req, res) => {
   const noteID = JSON.parse(req.params.id);
   console.log(noteID);
