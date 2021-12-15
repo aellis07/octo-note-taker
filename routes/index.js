@@ -28,11 +28,9 @@ router.post("/api/notes", (req, res) => {
     if (err) throw err;
     // creating a notes object using JSON.parse
     notes = JSON.parse(notes);
-    // assigning the note a default id value
-    let noteID = 0;
-    // creating a noteID that increments by 1
-    notes.id = noteID;
-    noteID++;
+    // creating a note id that increments the note object by 1
+    notes.id = notes.length + 1;
+    console.log(notes.length);
     // creating a new note object that includes the note id using the .concat method
     let note = { title: req.body.title, text: req.body.text, id: notes.id };
     let newNote = notes.concat(note);
