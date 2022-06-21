@@ -18,16 +18,18 @@ This project is licensed by: MIT.
 
 ## Installation
 
-Click [here](https://octo-note-taker.herokuapp.com) to visit the app.
+- Client-Side:
 
-To view the app locally:
+  - Click [here](https://octo-note-taker.herokuapp.com) to visit the app.
 
-1. Download this repository
-2. Go to location of the repository on your compouter
-3. Open a terminal in the root (main folder) of the repository
-4. Type "npm i" and press enter
-5. Type "npm start" and press enter
-6. Open browser and type http://localhost:3001/ (if you happen to have something already running on that port the server will automatically jump to the next available port)
+- Locally:
+
+  1. Download this repository
+  2. Go to location of the repository on your compouter
+  3. Open a terminal in the root (main folder) of the repository
+  4. Type "npm i" and press enter
+  5. Type "npm start" and press enter
+  6. Open browser and type http://localhost:3001/ (if you happen to have something already running on that port the server will automatically jump to the next available port)
 
 ## Usage
 
